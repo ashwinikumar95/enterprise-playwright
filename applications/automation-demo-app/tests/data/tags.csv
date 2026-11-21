@@ -1,0 +1,8 @@
+module,test_id,title,users,local_user,dev_user,qa_user,local,dev,qa,regression,data_dependent
+sampleItems,TC01,Items create and edit workflow,@user1,@user1,@user1,@user1,@smoke,@smoke,@smoke,@regression,No
+auth,AUTH01,Successful login,@userLogin,@userLogin,@userLogin,@userLogin,@smoke,@smoke,@smoke,,No
+auth,AUTH02,Invalid credentials,@userLogin,@userLogin,@userLogin,@userLogin,@smoke,@smoke,@smoke,,No
+auth,AUTH03,Unauthenticated access redirect,@userLogin,@userLogin,@userLogin,@userLogin,@smoke,@smoke,@smoke,,No
+auth,AUTH04,Session persistence with storage state,@user1,@user1,@user1,@user1,@smoke,@smoke,@smoke,,No
+auth,AUTH05,Expired session redirects to login,@user1,@user1,@user1,@user1,@smoke,@smoke,@smoke,,No
+loginLogout,LOGIN01,Login screen reachable without storage,@userLogin,@userLogin,@userLogin,@userLogin,@smoke,@smoke,@smoke,,No

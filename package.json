@@ -1,0 +1,26 @@
+{
+  "name": "enterprise-playwright",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Reusable enterprise Playwright automation framework",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "type-check": "pnpm -r --if-present run type-check",
+    "test:unit": "pnpm --filter @enterprise-playwright/core test",
+    "test:demo": "pnpm --filter @enterprise-playwright/automation-demo-app test",
+    "test:demo:smoke": "pnpm --filter @enterprise-playwright/automation-demo-app test:smoke",
+    "validate:tags": "pnpm --filter @enterprise-playwright/automation-demo-app validate:tags",
+    "allure:clean": "pnpm --filter @enterprise-playwright/automation-demo-app allure:clean",
+    "allure:generate": "pnpm --filter @enterprise-playwright/automation-demo-app allure:generate",
+    "allure:open": "pnpm --filter @enterprise-playwright/automation-demo-app allure:open",
+    "web:demo": "pnpm --filter @enterprise-playwright/automation-demo-app web:dev",
+    "build": "pnpm -r --if-present run build"
+  },
+  "devDependencies": {
+    "typescript": "5.7.3"
+  }
+}
