@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { AppConfig } from '@enterprise-playwright/shared-types';
 import { resolveEnvironment } from '../src/config/resolveEnvironment.js';
 import { ConfigValidationError } from '../src/config/validateAppConfig.js';
@@ -57,6 +57,10 @@ const config: AppConfig = {
 };
 
 describe('resolveEnvironment', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   it('uses explicit env and fails loud on unknown', () => {
     expect(resolveEnvironment(config, { explicitEnv: 'qa' }).id).toBe('qa');
     expect(() => resolveEnvironment(config, { explicitEnv: 'prod' })).toThrow(
@@ -65,12 +69,25 @@ describe('resolveEnvironment', () => {
   });
 
   it('derives from host markers', () => {
+    vi.stubEnv('ENV', '');
+    vi.stubEnv('APP_ENV', '');
     expect(
       resolveEnvironment(config, {
         explicitEnv: '',
         baseURL: 'https://dev.example.com',
       }).id,
     ).toBe('dev');
+  });
+
+  it('prefers process ENV over host markers', () => {
+    vi.stubEnv('ENV', 'local');
+    vi.stubEnv('APP_ENV', '');
+    expect(
+      resolveEnvironment(config, {
+        explicitEnv: '',
+        baseURL: 'https://dev.example.com',
+      }).id,
+    ).toBe('local');
   });
 
   it('falls back to default', () => {
