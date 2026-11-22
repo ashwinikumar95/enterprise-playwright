@@ -1,0 +1,7 @@
+module,test_id,title,users,local_user,dev_user,qa_user,local,dev,qa,regression,data_dependent
+auth,AUTH01,Valid login succeeds,@login,@login,@login,@login,@smoke,@smoke,@smoke,,No
+auth,AUTH02,Invalid login displays error,@login,@login,@login,@login,@smoke,@smoke,@smoke,,No
+auth,AUTH03,Authenticated storage state opens tickets,@agent,@agent,@agent,@agent,@smoke,@smoke,@smoke,,No
+auth,AUTH04,Session survives page reload,@agent,@agent,@agent,@agent,@smoke,@smoke,@smoke,,No
+tickets,TC01,CSV-driven ticket creation and confirmation,@agent,@agent,@agent,@agent,@smoke,@smoke,@smoke,@regression,Yes
+tickets,SEARCH01,Ticket search and status filtering,@agent,@agent,@agent,@agent,@smoke,@smoke,@smoke,@regression,No

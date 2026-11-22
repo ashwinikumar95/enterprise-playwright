@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in — Support Desk</title>
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card" aria-labelledby="signin-heading">
+        <h1 class="brand" id="signin-heading">Support Desk</h1>
+        <p class="lede">Sign in to create and track support tickets.</p>
+
+        <p id="signin-error" class="error" role="alert" hidden></p>
+
+        <form id="signin-form" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <div class="actions">
+            <button type="submit">Log in</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/pages/signin.ts"></script>
+  </body>
+</html>

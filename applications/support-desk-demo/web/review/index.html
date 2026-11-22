@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review ticket — Support Desk</title>
+  </head>
+  <body>
+    <div class="desk-shell" data-testid="desk-shell">
+      <main class="main">
+        <section class="panel wide" aria-labelledby="review-heading">
+          <h1 id="review-heading">Review ticket</h1>
+          <p class="lede">Step 2 of 2 — confirm details before submitting.</p>
+
+          <p id="missing-draft" class="banner" data-tone="warn" role="status" hidden>
+            No draft found. <a href="/new/">Start a new ticket</a>.
+          </p>
+
+          <div id="review-panel" hidden>
+            <ul class="meta-list">
+              <li>
+                <div class="label">Subject</div>
+                <div class="value" id="review-subject"></div>
+              </li>
+              <li>
+                <div class="label">Category</div>
+                <div class="value" id="review-category"></div>
+              </li>
+              <li>
+                <div class="label">Description</div>
+                <div class="value" id="review-description"></div>
+              </li>
+            </ul>
+
+            <div class="actions">
+              <button type="button" id="submit-ticket">Submit ticket</button>
+              <a class="button secondary" href="/new/">Back</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/pages/review.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+testId,subject,category,description
+TC01,Cannot access shared drive,Network,Drive mapping fails after reboot and requires manual reconnect.
+TC01,Invoice discrepancy on March bill,Billing,Line-item charges do not match the approved quote for March.
+TC01,Application crashes on CSV export,Software,Exporting a large report to CSV closes the client unexpectedly.

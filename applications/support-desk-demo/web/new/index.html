@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New ticket — Support Desk</title>
+  </head>
+  <body>
+    <div class="desk-shell" data-testid="desk-shell">
+      <main class="main">
+        <section class="panel wide" aria-labelledby="new-heading">
+          <h1 id="new-heading">New ticket</h1>
+          <p class="lede">Step 1 of 2 — capture the request details.</p>
+          <p id="page-banner" class="banner" role="status" hidden></p>
+
+          <form id="ticket-form">
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required maxlength="120" />
+            </div>
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="Account">Account</option>
+                <option value="Billing">Billing</option>
+                <option value="Network">Network</option>
+                <option value="Software">Software</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" required maxlength="2000"></textarea>
+            </div>
+            <div class="actions">
+              <button type="submit">Continue</button>
+              <a class="button secondary" href="/tickets/">Cancel</a>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/pages/new.ts"></script>
+  </body>
+</html>

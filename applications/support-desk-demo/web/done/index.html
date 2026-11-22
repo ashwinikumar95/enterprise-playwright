@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket submitted — Support Desk</title>
+  </head>
+  <body>
+    <div class="desk-shell" data-testid="desk-shell">
+      <main class="main">
+        <section class="panel" aria-labelledby="done-heading">
+          <h1 id="done-heading">Confirmation</h1>
+          <p id="page-banner" class="banner" role="status" hidden></p>
+          <p id="missing-ticket" class="banner" data-tone="warn" role="status" hidden>
+            No recent submission found. <a href="/new/">Create a ticket</a>.
+          </p>
+
+          <ul class="meta-list">
+            <li>
+              <div class="label">Ticket ID</div>
+              <div class="value ticket-id" id="ticket-id" data-testid="ticket-id">—</div>
+            </li>
+          </ul>
+
+          <div class="actions">
+            <a class="button" href="/tickets/">View tickets</a>
+            <a class="button secondary" href="/new/">Create another</a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/pages/done.ts"></script>
+  </body>
+</html>

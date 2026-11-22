@@ -18,7 +18,19 @@
     "allure:generate": "pnpm --filter @enterprise-playwright/automation-demo-app allure:generate",
     "allure:open": "pnpm --filter @enterprise-playwright/automation-demo-app allure:open",
     "web:demo": "pnpm --filter @enterprise-playwright/automation-demo-app web:dev",
-    "build": "pnpm -r --if-present run build"
+    "build": "pnpm -r --if-present run build",
+    "demo:web:dev": "pnpm --filter @enterprise-playwright/automation-demo-app web:dev",
+    "demo:web:build": "pnpm --filter @enterprise-playwright/automation-demo-app web:build",
+    "demo:test": "pnpm --filter @enterprise-playwright/automation-demo-app test",
+    "demo:test:smoke": "pnpm --filter @enterprise-playwright/automation-demo-app test:smoke",
+    "demo:allure:generate": "pnpm --filter @enterprise-playwright/automation-demo-app allure:generate",
+    "demo:allure:open": "pnpm --filter @enterprise-playwright/automation-demo-app allure:open",
+    "support-desk:web:dev": "pnpm --filter @enterprise-playwright/support-desk-demo web:dev",
+    "support-desk:web:build": "pnpm --filter @enterprise-playwright/support-desk-demo web:build",
+    "support-desk:test": "pnpm --filter @enterprise-playwright/support-desk-demo test",
+    "support-desk:test:smoke": "pnpm --filter @enterprise-playwright/support-desk-demo test:smoke",
+    "support-desk:allure:generate": "pnpm --filter @enterprise-playwright/support-desk-demo allure:generate",
+    "support-desk:allure:open": "pnpm --filter @enterprise-playwright/support-desk-demo allure:open"
   },
   "devDependencies": {
     "typescript": "5.7.3"

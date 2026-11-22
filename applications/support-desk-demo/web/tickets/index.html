@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickets — Support Desk</title>
+  </head>
+  <body>
+    <div class="desk-shell" data-testid="desk-shell">
+      <main class="main">
+        <section class="panel wide" aria-labelledby="tickets-heading">
+          <h1 id="tickets-heading">Tickets</h1>
+          <p class="lede">Search and filter open requests for this desk.</p>
+
+          <div class="toolbar" role="search">
+            <div class="field">
+              <label for="ticket-search">Search</label>
+              <input
+                id="ticket-search"
+                name="q"
+                type="search"
+                placeholder="ID, subject, category…"
+                autocomplete="off"
+              />
+            </div>
+            <div class="field">
+              <label for="status-filter">Status</label>
+              <select id="status-filter" name="status">
+                <option value="all">All statuses</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+              </select>
+            </div>
+            <a class="button" href="/new/">New ticket</a>
+          </div>
+
+          <p id="result-count" class="lede" aria-live="polite">0 tickets</p>
+
+          <table class="ticket-table" data-testid="tickets-table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="ticket-rows"></tbody>
+          </table>
+          <p id="empty-results" class="empty" hidden>No tickets match your filters.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/pages/tickets.ts"></script>
+  </body>
+</html>
